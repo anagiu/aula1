@@ -5,7 +5,15 @@
 
 <p>Tem certeza?????</p>
 
+<p><strong>Vc está prestes a apagar o menine {{ usuario.username }}</strong></p>
 
+
+<form action="#"" method="post">
+    <input type="hidden" name="id" value="{{ usuario.id }}">
+    <input type="submit" value="Apagar o dito cujo">
+</form>
+
+<div><a href="usuarios.php"></a>Cancelar</div>
 
 {% include "inc/foot.html" %}
 
