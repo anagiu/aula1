@@ -8,6 +8,8 @@ $msg = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'] ?? false;
+    
+
 
     $sql = $pdo->prepare('SELECT * FROM usuarios
     WHERE username = ?');
