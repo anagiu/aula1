@@ -12,7 +12,7 @@ class Model
     protected $conex;
 
 
-    public function _construct(){
+    public function __construct(){
 
         $tbl = strtolower (get_class($this));
         $tbl.= 's';
@@ -25,8 +25,18 @@ class Model
     }
 
 public function getAll() {
+    $sql = $this->conex->query("SELECT * FROM {$this->table}");
 
+    return $sql -> fetchAll(PDO::FETCH_ASSOC);
 }
+
+public function getById($id) {
+    $sql = $this->prepare->("SELECT FROM {$this->table} WHERE id = ?");
+    $sql->bindParam
+
+    
+}
+
 
 
 }
