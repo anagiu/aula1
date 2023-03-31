@@ -31,8 +31,10 @@ public function getAll() {
 }
 
 public function getById($id) {
-    $sql = $this->prepare->("SELECT FROM {$this->table} WHERE id = ?");
-    $sql->bindParam
+    $sql = $this->conex->prepare("SELECT FROM {$this->table} WHERE id = :id");
+    $sql->bindValue(':id', $id);
+    $sql->execute();
+    return $sql->fetch(PDO::FETCH_ASSOC);
 
     
 }
