@@ -39,6 +39,34 @@ public function getById($id) {
     
 }
 
+    public function create($data){
+        //inicia a construção do sql
+       $sql = "INSERT INTO {$this->table}";
 
+       // prepara os campos e placeholders
+       foreach (array_keys ($data) as $field) {
+           $sql_fields[] = "{$field} = :{$field}";
+
+       }
+
+        $sql_fields = implode(', ', $sql_fields);
+        // monta a consulta
+        $sql .= " SET {$sql_fields}";
+
+        //prepara e roda no banco
+    $insert = $this->conex->prepare($sql);
+
+       //faz os binds nos valores
+      // foreach ($data as $fields => $value) {
+        //   $insert->bindValue(":{$field}", $value);
+       //}
+
+
+       //roda a consulta
+       $insert ->execute($data);
+
+       return $insert->errorInfo();
+       
+}
 
 }
