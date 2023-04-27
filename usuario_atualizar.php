@@ -19,5 +19,5 @@ if (!$nome || !$email || !$username) {
      'username' => $username,
 
  ], $id);
- header('location:usuarios.php');
+ header('location:/usuarios');
  die;

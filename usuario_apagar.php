@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
     }
 
-header('location:usuarios.php');
+header('location:/usuarios');
     die;
 
 }
